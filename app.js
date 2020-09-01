@@ -49,19 +49,6 @@ app.get("/userlist", (req, res) => {
     });
 });
 
-/*app.post("/chatinsert", (req, res) => {
-    chatmodel.chatInsert(req.body).then(item => {
-        if(item) {
-        res.status(200).send(item);
-        } else {
-        res.status(201).send({message: "no records found"});
-        }
-    })
-    .catch(err => {
-        res.status(400).send(err);
-    });
-});*/
-
 const websocket = socketio(server);
 
 websocket.on('connection', function(socket) {
@@ -75,19 +62,4 @@ websocket.on('connection', function(socket) {
         });
     });
 })
-/*app.post("/chatlist", (req, res) => {
-    chatmodel.getChatList(req.body).then(item => {
-        if(item && item.length>0) {
-        res.status(200).send(item);
-        } else {
-        res.status(201).send({message: "no records found"});
-        }
-    })
-    .catch(err => {
-        res.status(400).send(err);
-    });
-});
 
- app.listen(port, () => {
-     console.log("Server listening on port" + port);
- });*/
