@@ -1,0 +1,11 @@
+const mongoose = require("mongoose");
+
+const connection = mongoose.connect('mongodb://localhost/chitchat', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log('connected to MongoDB ..'))
+.catch(err => console.error('Could not connect to MongoDB:27017', err));
+mongoose.set('useCreateIndex', true);
+
+module.exports = [].concat(connection);
